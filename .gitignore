@@ -38,3 +38,4 @@ yarn-debug.log*
 .idea
 .rakeTasks
 .generators
+.rubocop_todo.yml
