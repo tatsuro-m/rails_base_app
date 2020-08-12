@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.7.1'
+ruby '2.6.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
@@ -35,6 +35,7 @@ group :development, :test do
   gem 'ruby-debug-ide', '~> 0.7.2'
   gem 'better_errors'
   gem 'letter_opener'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
@@ -53,7 +54,6 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
-  gem 'webdrivers'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
 end

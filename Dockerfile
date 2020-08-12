@@ -1,4 +1,4 @@
-FROM ruby:2.7.1-alpine
+FROM ruby:2.6.6-alpine
 
 ENV ROOT="/base_app"
 ENV LANG=C.UTF-8
@@ -21,6 +21,7 @@ RUN apk update && \
         postgresql-dev \
         vim \
         tzdata \
+        chromium-chromedriver \
         chromium \
         yarn && \
     apk add --virtual build-packages --no-cache \
