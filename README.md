@@ -19,11 +19,12 @@
 3. アプリ名を変更します。 `mv rails_base_app new_app_name`
 4. `database.yml` のDB名をアプリ名に合わせて変更してください。
 5. `Dockerfile`の環境変数 ROOT を変更し、それに合わせて `docker-compose.yml` の volume ディレクトリを変更してください
-6. `docker-compose build` & `docker-compose up`
-7. `docker-compose exec web rake db:create`
-8. `localhost:3000/` にアクセスして画面が表示されること、 `docker-compose exec web rspec` を実行して初期テストがパスすることを確認してください。
-9. 確認が終了したら git の管理下に置きます。 `git init`
-10. あとはよしなに。。。
+6. `docker-compose build` 
+7. `docker-compose run --rm web yarn install` & `docker-compose run --rm web rake db:create`
+8. `docker-compose up`
+9. `localhost:3000/` にアクセスして画面が表示されること、 `docker-compose exec web rspec` を実行して初期テストがパスすることを確認してください。
+10. 確認が終了したら git の管理下に置きます。 `git init`
+11. あとはよしなに。。。
 
 ## その他注意点など
 - イメージには alpine を使っている
