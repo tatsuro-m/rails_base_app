@@ -2,7 +2,6 @@ version: '3.8'
 
 x-default_environment: &rails_app_environment
   EDITOR: vim
-  WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
   RAILS_DB_USER: postgres
   RAIlS_DB_PASSWORD: password
   RAILS_DB_HOST: db
@@ -27,6 +26,7 @@ services:
       - "3000:3000"
     environment:
       <<: *rails_app_environment
+      WEBPACKER_DEV_SERVER_HOST: webpacker
     depends_on:
       - db
       - webpacker
@@ -36,7 +36,10 @@ services:
   webpacker:
     build: .
     command: bin/webpack-dev-server
+    ports:
+      - 3035:3035
     environment:
       <<: *rails_app_environment
+      WEBPACKER_DEV_SERVER_HOST: 0.0.0.0
     volumes:
       - *rails_app_volumes
