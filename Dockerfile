@@ -1,6 +1,6 @@
 FROM ruby:2.6.6-alpine
 
-ENV ROOT="/base_app"
+ENV ROOT="/app"
 ENV LANG=C.UTF-8
 ENV TZ=Asia/Tokyo
 ENV NODE_ENV=development
