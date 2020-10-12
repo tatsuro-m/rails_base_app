@@ -5,7 +5,7 @@ x-default_environment: &rails_app_environment
   RAILS_DB_USER: postgres
   RAIlS_DB_PASSWORD: password
   RAILS_DB_HOST: db
-x-rails_app_volumes: &rails_app_volumes .:/base_app:cached
+x-rails_app_volumes: &rails_app_volumes .:/app:cached
 
 services:
   db:
